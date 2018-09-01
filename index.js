@@ -10,7 +10,6 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const CONFIG_FILE = './config.json';
-//const CONFIG_FILE = '/usr/bin/foo';
 
 app.use(express.static('public'));
 
