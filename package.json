@@ -10,6 +10,8 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "cors": "^2.8.4"
+    "cors": "^2.8.4",
+    "jimp": "^0.3.11",
+    "pi-camera-connect": "^0.2.0"
   }
 }
