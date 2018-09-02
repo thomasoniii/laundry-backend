@@ -1,0 +1,15 @@
+[Unit]
+Description=Laundry Backend
+
+[Service]
+ExecStart=/usr/local/bin/node /home/pi/laundry/backend/index.js
+Restart=always
+RestartSec=10
+#User=nobody
+#Group=nobody
+#Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production PORT=3000
+WorkingDirectory=/home/pi/laundry/backend
+
+[Install]
+WantedBy=multi-user.target
