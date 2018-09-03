@@ -73,7 +73,7 @@ app.get('/status', (req, res) => {
         Jimp.read(`http://localhost:${PORT}/image`)
           .then( async laundry => {
 
-            let status = {};
+            let status = { default : { washer : config.washer.colors, dryer : config.dryer.colors }, current : {} };
 
             MACHINES.forEach(machine => {
               const machineState = config[machine];
@@ -92,6 +92,8 @@ app.get('/status', (req, res) => {
               colors.r = Math.round(colors.r / pixels);
               colors.g = Math.round(colors.g / pixels);
               colors.b = Math.round(colors.b / pixels);
+
+              status.current[machine] = colors;
 
               if (
                    colors.r > machineState.colors.r + 20
